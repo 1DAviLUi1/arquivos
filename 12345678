@@ -1,56 +1,90 @@
+
 #include <stdio.h>
 
 int main(){
     char comando;
     char cde, cdv, cf;
     char produto [100];
-    
+    int despesas, receita, saldo;
+
     while (1){
-        printf("Menu Principal:\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrer programa\n Digite:");
+        printf("Menu Principal:\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n Digite:");
         scanf(" %c", &comando);
-    
+
     switch(comando){
-    case '1':
-        while(1){
-        printf("Controle de estoque o.O:\n");
-        printf(" 1 - Cadastrar um produto\n 2 - Visualizar produtos\n 3 - voltar ao menu principal\n");
-        scanf( " %c", &cde);
-        if(cde == '1'){
+        case '1':
             while(1){
-                printf("Cadastre o produto:\n ");
-                scanf("%s", produto);
-                printf("Produto cadastrado!\n");
-                printf(" 1 - Cadastrar outro produto\n 2 - Voltar ao controle de estoque\n 3 - Voltar ao menu principal\n");
-                printf(" Digite:");
-                scanf(" %c", &cde);
-                if(cde == '1'){
-                    continue;    
+            printf("Controle de estoque o.O:\n");
+            printf(" 1 - Cadastrar um produto\n 2 - Visualizar produtos\n 3 - voltar ao menu principal\n");
+            scanf( " %c", &cde);
+            if(cde == '1'){
+                while(1){
+                    printf("Cadastre o produto:\n ");
+                    scanf("%s", produto);
+                    printf("Produto cadastrado!\n");
+                    printf(" 1 - Cadastrar outro produto\n 2 - Voltar ao controle de estoque\n 3 - Voltar ao menu principal\n");
+                    printf(" Digite:");
+                    scanf(" %c", &cde);
+                    if(cde == '1'){
+                        continue;
                 }
-                else if(cde == '2'){
-                    break;
+                    else if(cde == '2'){
+                        break;
                 }
-                else if(cde == '3'){
-                    break;
-                }/*Else if break 3 o plug nem responde*/    
+                    else if(cde == '3'){
+                        break;
+                }/*Else if break 3 o plugg nem responde*/
             }/*While do controle do cadastro de produto*/
         }/*if cde 1*/
         else if(cde == '2'){
-            printf("produtos: %s\n", produto);
+            printf(" %s\n", produto);
         }/*if cde 2*/
         else if(cde == '3'){
             break;
         }/*if cde 3*/
         }/*While do controle de estoque*/
     }/*switch comando*/
+    switch(comando){
+        case '2':
+                while(1){
+                    printf("Controle de vendas p-p");
+                    
+                }
+        }
+
+        switch(comando){
+            case '3':
+                while(1){
+                    printf("Controle financeiro e8p:\n");
+                    printf(" 1 - Registrar despesas\n 2 - Registrar receitas \n 3 - Consultar Saldo\n 4 - voltar ao menu principal\n");
+                    scanf(" %c", &cf);
+                    if(cf == '1'){
+                        printf("Digite suas despesas\n");
+                        scanf(" %d", &despesas);
+                    }
+                    else if(cf == '2'){
+                        printf("Digite sua receita\n");
+                        scanf(" %d", &receita);
+                    }
+                    else if(cf == '3'){
+                        saldo = receita - despesas;
+                        printf(" Seu saldo eh:%d\n", saldo);
+                    }
+                    else if(cf == '4'){
+                        break;
+                    }
+                }
+        }
+
         switch(comando){
             case '4':
             printf("Tbom entao *-*");
             return 0;
-            
-            
+
+
             default:
             printf("=P\n");
             break;
-        }
+        }/*SWITCHCOMANDOCASE4NATRAVESSOAPONTE*/
     }/*While do loop geral*/
 }/*Main*/
