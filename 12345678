@@ -4,7 +4,10 @@
 int main(){
     char comando;
     char cde, cdv, cf;
+    float preco;
     char produto [100];
+    int produtocad;
+    produtocad = 0;
     int despesas, receita, saldo;
 
     while (1){
@@ -21,6 +24,7 @@ int main(){
                 while(1){
                     printf("Cadastre o produto:\n ");
                     scanf("%s", produto);
+                    produtocad = 1;
                     printf("Produto cadastrado!\n");
                     printf(" 1 - Cadastrar outro produto\n 2 - Voltar ao controle de estoque\n 3 - Voltar ao menu principal\n");
                     printf(" Digite:");
@@ -37,7 +41,12 @@ int main(){
             }/*While do controle do cadastro de produto*/
         }/*if cde 1*/
         else if(cde == '2'){
+            if (produtocad){
             printf(" %s\n", produto);
+            }
+            else{
+                printf("Nenhum produto cadastrado\n");
+            }
         }/*if cde 2*/
         else if(cde == '3'){
             break;
@@ -47,7 +56,22 @@ int main(){
     switch(comando){
         case '2':
                 while(1){
-                    printf("Controle de vendas p-p");
+                    printf("Controle de vendas p-p\n");
+                    printf(" 1 - Colocar preco\n 2 - Visualizar precos\n 3 - Voltar ao menu principal\n");
+                    scanf(" %c", &cdv);
+                    if (cdv == '1'){
+                        printf("Digite o preco:\n");
+                        printf(" %s:R$", produto);
+                        scanf(" %f", &preco);
+                        printf("Preco cadastrado;)\n");
+                    }
+                    else if (cdv == '2'){
+                        printf("Produtos e preco:\n");
+                        printf(" %s: R$ %f\n", produto, preco);
+                    }
+                    else if (cdv == '3'){
+                        break;
+                    }
                     
                 }
         }
