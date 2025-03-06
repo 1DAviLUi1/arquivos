@@ -1,4 +1,10 @@
 #include <stdio.h>
+    char comando;
+    void imprmir_a_porra_do_menu(){
+        printf ("Menu Principal:\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n Digite:");
+        scanf( "%c", &comando);
+    
+}
 
 int main(){
     char comando;
@@ -10,7 +16,7 @@ int main(){
     int despesas, receita, saldo;
 
     while (1){
-        printf("Menu Principal:\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n Digite:");
+        printf("Menu Principal:\n 1 - Conjtrole de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n Digite:");
         scanf(" %c", &comando);
 
     switch(comando){
@@ -35,7 +41,7 @@ int main(){
                         break;
                 }
                     else if(cde == '3'){
-                        break;
+                        imprmir_a_porra_do_menu;
                 }/*Else if break 3 o plugg nem responde*/
             }/*While do controle do cadastro de produto*/
         }/*if cde 1*/
@@ -69,7 +75,7 @@ int main(){
                         printf(" %s: R$ %f\n", produto, preco);
                     }
                     else if (cdv == '3'){
-                        break;
+                        imprmir_a_porra_do_menu;
                     }
                     
                 }
@@ -94,7 +100,7 @@ int main(){
                         printf(" Seu saldo eh:%d\n", saldo);
                     }
                     else if(cf == '4'){
-                        break;
+                        imprmir_a_porra_do_menu;;
                     }
                 }
         }
