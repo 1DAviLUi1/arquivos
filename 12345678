@@ -87,6 +87,11 @@
                         glitter();
                     }
              }
+             switch (comando){
+                 case '4':
+                 printf(" Tbom entao *-*");
+                 return;
+             }
             }
 }
 int main() {
