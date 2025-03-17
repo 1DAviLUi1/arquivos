@@ -58,15 +58,28 @@
                     printf(" 1 - Colocar preco\n 2 - Visualizar precos\n 3 - Voltar ao menu principal\n");
                     scanf(" %c", &cdv);
                     if (cdv == '1'){
-                        printf("Digite o preco:\n");
+                        if (produtocad=1){
                         printf(" %s:R$", produto);
                         scanf(" %f", &preco);
                         printf("Preco cadastrado;)\n");
+                        }
+                        else{
+                            printf("nenhum produto cadastrado recentemente :(\n");
+                        }
                     }
                     else if (cdv == '2'){
                         printf("Produtos e preco:\n");
-                        printf(" %s: R$ %.2f\n", produto, preco);
-                    }
+                        printf("Produto A - R$10.00\n");
+                        printf("Produto B - R$20.00\n");
+                        printf("Produto C - R$15.00 \n");
+                        printf("Produto D - R$25.00\n");
+                        if (produtocad) {
+                            printf(" %s - R$%.2f\n", produto, preco);
+                         }
+                        else{
+                            printf("");
+                         }
+                        }
                     else if (cdv == '3'){
                         glitter();
                     }
