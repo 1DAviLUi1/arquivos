@@ -1,11 +1,10 @@
 #include <stdio.h>
-    char comando;
+#include <stdlib.h>
+    float preco = 0;
+    char produto[100];
+    int qadprod = 0, produtocad = 0;
     void glitter(){
-        char cde, cdv, cf;
-        float preco;
-        char produto[100];
-        int qadprod, produtocad;
-        produtocad = 0;
+        char comando, cde, cdv, cf;
         int despesas, receita, saldo;
         printf("Menu Principal:\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\nDigite: ");
         scanf(" %c", &comando);
@@ -38,11 +37,11 @@
                         }
                     }
                             else if (cde == '2') {
-                                    printf("Produto A - 50 unidades\n");
-                                    printf("Produto B - 30 unidades\n");
-                                    printf("Produto C - 20 unidades \n");
-                                    printf("Produto D - 15 unidades\n");
-                                if (produtocad) {
+                                    printf("Caneta - 50 unidades\n");
+                                    printf("Canetada - 30 unidades\n");
+                                    printf("Canetinha - 20 unidades \n");
+                                    printf("Caneto - 15 unidades\n");
+                                if (produtocad != 0) {
                                     printf("%s - %d unidades\n", produto, qadprod);
                         }
                                 else {
@@ -58,7 +57,7 @@
                     printf(" 1 - Colocar preco\n 2 - Visualizar precos\n 3 - Voltar ao menu principal\n");
                     scanf(" %c", &cdv);
                     if (cdv == '1'){
-                        if (produtocad=1){
+                        if (produtocad !=0){
                         printf(" %s:R$", produto);
                         scanf(" %f", &preco);
                         printf("Preco cadastrado;)\n");
@@ -69,16 +68,14 @@
                     }
                     else if (cdv == '2'){
                         printf("Produtos e preco:\n");
-                        printf("Produto A - R$10.00\n");
-                        printf("Produto B - R$20.00\n");
-                        printf("Produto C - R$15.00 \n");
-                        printf("Produto D - R$25.00\n");
-                        if (produtocad) {
-                            printf(" %s - R$%.2f\n", produto, preco);
+                        printf("Caneta - R$10.00\n");
+                        printf("Canetada - R$20.00\n");
+                        printf("Canetinha - R$15.00 \n");
+                        printf("Caneto - R$25.00\n");
+                        if (produtocad !=0) {
+                            printf("%s - R$%.2f\n", produto, preco);
                          }
-                        else{
-                            printf("");
-                         }
+                        else{}
                         }
                     else if (cdv == '3'){
                         glitter();
@@ -109,10 +106,12 @@
              switch (comando){
                  case '4':
                  printf(" Tbom entao *-*");
-                 return;
+                 exit (0);
              }
             }
 }
 int main() {
+    while (1){
     glitter();
+    }
 }
