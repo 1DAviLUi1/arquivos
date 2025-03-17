@@ -4,7 +4,7 @@
         char cde, cdv, cf;
         float preco;
         char produto[100];
-        int produtocad;
+        int qadprod, produtocad;
         produtocad = 0;
         int despesas, receita, saldo;
         printf("Menu Principal:\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\nDigite: ");
@@ -17,8 +17,10 @@
                             scanf(" %c", &cde);
                             if (cde == '1') {
                                 while (1) {
-                                    printf("Cadastre o produto:\n ");
+                                    printf("Cadastre o nome do produto: ");
                                     scanf("%s", produto);
+                                    printf("Quantidade do produto disponivel no estoque:");
+                                    scanf( "%d", &qadprod);
                                     produtocad = 1;
                                     printf("Produto cadastrado!\n");
                                     printf(" 1 - Cadastrar outro produto\n 2 - Voltar ao controle de estoque\n 3 - Voltar ao menu principal\n");
@@ -36,11 +38,15 @@
                         }
                     }
                             else if (cde == '2') {
+                                    printf("Produto A - 50 unidades\n");
+                                    printf("Produto B - 30 unidades\n");
+                                    printf("Produto C - 20 unidades \n");
+                                    printf("Produto D - 15 unidades\n");
                                 if (produtocad) {
-                                    printf(" %s\n", produto);
+                                    printf("%s - %d unidades\n", produto, qadprod);
                         }
                                 else {
-                                    printf("Nenhum produto cadastrado\n");
+                                    printf(";P\n");
                         }
                     }           else if (cde == '3') {
                                     glitter();
@@ -59,7 +65,7 @@
                     }
                     else if (cdv == '2'){
                         printf("Produtos e preco:\n");
-                        printf(" %s: R$ %f\n", produto, preco);
+                        printf(" %s: R$ %.2f\n", produto, preco);
                     }
                     else if (cdv == '3'){
                         glitter();
