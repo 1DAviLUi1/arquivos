@@ -150,13 +150,13 @@
                             }
                             else if(fmdp == 2){
                                 printf("Cartao passou?\n");
-                                printf("1 - Cartao passou\n 2 - Cartao nao passou\n");
+                                printf("1 - Cartao passou\n2 - Cartao nao passou\n");
                                 scanf(" %d", &cartaopassou);
                                 switch(cartaopassou){
                                     case 1:
                                     printf("Compra realizada ;)\n");
                                     saldo = saldo + resultado;
-                                    break;
+                                    glitter();
                                     
                                     case 2:
                                     printf(":/ Aff\n");
