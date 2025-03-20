@@ -37,6 +37,7 @@
                                     scanf( " %d", &qadprod);
                                     produtocad = 1;
                                     printf(" Produto cadastrado!\n");
+                                    continue;
                     }
                             else if (cde == '2') {
                                     printf(" A - Caneta - 50 unidades\n");
@@ -57,7 +58,7 @@
                             printf(" Controle de vendas p-p\n");
                             printf(" 0 - Limpar Buffer\n 1 - Colocar preco\n 2 - Vender\n 3 - Voltar ao menu principal\n");
                             scanf(" %c", &cdv);
-                            if (comando == '0'){
+                            if (cdv == '0'){
                                 luna();
                                 continue;
                             }
@@ -186,7 +187,7 @@
                     printf(" Controle financeiro e8p:\n");
                     printf(" 0 - Limpar Buffer\n 1 - Registrar despesas\n 2 - Registrar receitas \n 3 - Consultar Saldo\n 4 - voltar ao menu principal\n");
                     scanf(" %c", &cf);
-                    if (comando == '0'){
+                    if (cf == '0'){
                         luna();
                         continue;
                     }
