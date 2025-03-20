@@ -1,0 +1,223 @@
+//xD
+#include <stdio.h>
+#include <stdlib.h>
+    float preco = 0, saldo = 0, receita = 0, despesas = 0;
+    char produto[100];
+    int qadprod = 0, produtocad = 0;
+    void luna(){
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
+    }
+    void glitter(){
+        float  resultado, resultado2, escpod2, troco, troco1, saldo2;
+        char comando, cde, cdv, cf;
+        int  escpod, fmdp, cartaopassou;
+        printf(" Menu Principal:\n 0 - Limpar Buffer\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\nDigite: ");
+        scanf(" %c", &comando);
+                while (1) {
+                    switch (comando){
+                        case '0':
+                            luna();
+                            break;
+                        case '1':
+                            printf(" Controle de estoque o.O:\n");
+                            printf(" 0 - Limpar Buffer\n 1 - Cadastrar um produto\n 2 - Visualizar produtos\n 3 - Voltar ao menu principal\n");
+                            scanf(" %c", &cde);
+                            if (cde == '0'){
+                                luna();
+                                continue;
+                            }
+                            else if (cde == '1') {
+                                    printf(" Cadastre o nome do produto: ");
+                                    scanf("%s", produto);
+                                    printf(" Quantidade do produto disponivel no estoque:");
+                                    scanf( " %d", &qadprod);
+                                    produtocad = 1;
+                                    printf(" Produto cadastrado!\n");
+                    }
+                            else if (cde == '2') {
+                                    printf(" A - Caneta - 50 unidades\n");
+                                    printf(" B - Canetada - 30 unidades\n");
+                                    printf(" C - Canetinha - 20 unidades \n");
+                                    printf(" D - Caneto - 15 unidades\n");
+                                if (produtocad != 0) {
+                                    printf(" %s - %d unidades\n", produto, qadprod);
+                        }
+                                else {}
+                                continue;
+                    }
+                               else if (cde == '3') {
+                                    glitter();
+                    }
+                        break;
+                        case '2':
+                            printf(" Controle de vendas p-p\n");
+                            printf(" 0 - Limpar Buffer\n 1 - Colocar preco\n 2 - Vender\n 3 - Voltar ao menu principal\n");
+                            scanf(" %c", &cdv);
+                            if (comando == '0'){
+                                luna();
+                                continue;
+                            }
+                            else if (cdv == '1'){
+                                if (produtocad !=0){
+                                    printf(" %s:R$", produto);
+                                    scanf(" %f", &preco);
+                                    printf(" Preco cadastrado;)\n");
+                                    continue;
+                        }
+                            else{
+                                printf(" Nenhum produto cadastrado recentemente :(\n");
+                        }
+                    }
+                    else if (cdv == '2'){
+                        printf(" Produtos e preco:\n");
+                        printf(" 1 - Caneta - R$10.00\n");
+                        printf(" 2 - Canetada - R$20.00\n");
+                        printf(" 3 - Canetinha - R$15.00 \n");
+                        printf(" 4 - Caneto - R$25.00\n");
+                        if (produtocad !=0) {
+                            printf(" 5 - %s - R$%.2f\n", produto, preco);
+                         }
+                        else{}
+                        printf(" Selecione o produto que deseja comprar ou digite qualquer diferente de um numero de 1 a 4 coisa para voltar ao controle de vendas agora sao 09h25 atirem nos meus pes se for mentira: \n");
+                        scanf(" %d", &escpod);
+                        if(escpod == 1){
+                            printf(" Caneta - R$10.00\n");
+                            printf(" Selecione a quantidade desejada: ");
+                            scanf(" %f", &escpod2);
+                            resultado = 10* escpod2;
+                            printf(" O valor total ficou: %.2fR$\n", resultado);
+                        }
+                        else if(escpod == 2){
+                            printf(" Canetada - R$20.00\n");
+                            printf(" Selecione a quantidade desejada: ");
+                            scanf(" %f", &escpod2);
+                            resultado = 20* escpod2;
+                            printf(" O valor total ficou: %.2fR$\n", resultado);
+                        }
+                        else if(escpod == 3){
+                            printf(" Canetinha - R$15.00\n");
+                            printf(" Selecione a quantidade desejada: ");
+                            scanf(" %f", &escpod2);
+                            resultado = 15* escpod2;
+                            printf(" O valor total ficou: %.2fR$\n", resultado);
+                        }
+                        else if(escpod == 4){
+                            printf(" Caneto - R$25.00\n");
+                            printf(" Selecione a quantidade desejada: ");
+                            scanf(" %f", &escpod2);
+                            resultado = 25* escpod2;
+                            printf(" O valor total ficou: %.2fR$\n", resultado);
+                        }
+                        else if(escpod == 5){
+                            printf(" 5 - %s - R$%.2f\n", produto, preco);
+                            printf(" Selecione a quantidade desejada: ");
+                            scanf(" %f", &escpod2);
+                            resultado = preco* escpod2;
+                            printf(" O valor total ficou: %.2fR$\n", resultado);
+                        }
+                        else{
+                            break;
+                        }
+                        while(1){
+                            printf(" Selecione a forma de pagamento:\n");
+                            printf(" 1 - dinheiro\n2 - cartao\n3 - Cancelar compra\n");
+                            scanf(" %d", &fmdp);
+                            if(fmdp == 1){
+                                if(resultado >=100){
+                                    printf(" desconto adicionado, valor total ficou de:");
+                                    resultado2 = resultado* (18/100.00);
+                                    resultado = resultado - resultado2;
+                                    printf(" %.2fR$\n", resultado);
+                                }
+                                else if(resultado >=50){
+                                    printf(" Desconto adicionado, valor total ficou de:");
+                                    resultado2 = resultado* (10.00/100.00);
+                                    resultado = resultado - resultado2;
+                                    printf(" %.2fR$\n", resultado);
+                                }
+                                else if (resultado <=50){
+                                    printf(" Desconto adicionado, valor total ficou de:");
+                                    resultado2 = resultado* (5.00/100.00);
+                                    resultado = resultado - resultado2;
+                                    printf(" %.2fR$\n", resultado);
+                                }
+                                printf(" Informe a quantidade paga em dinheiro: ");
+                                scanf(" %f", &troco);
+                                troco1 = troco - resultado;
+                                printf(" Entregue: %.2fR$ de troco para o cliente\nFeito!!11!!!11!!\n", troco1);
+                                saldo = resultado + saldo;
+                                glitter();
+                            }
+                            else if(fmdp == 2){
+                                printf(" Cartao passou?\n");
+                                printf(" 1 - Cartao passou\n 2 - Cartao nao passou\n");
+                                scanf(" %d", &cartaopassou);
+                                switch(cartaopassou){
+                                    case 1:
+                                    printf(" Compra realizada ;)\n");
+                                    saldo = saldo + resultado;
+                                    glitter();
+                                    break;
+
+                                    case 2:
+                                    printf(" :/ Aff\n");
+                                    break;
+                                }
+                            }
+                            else if(fmdp == 3){
+                                printf(" Compra cancelada :(\n");
+                                glitter();
+                            }
+                            else{
+                                printf(" 8/ comando errado");
+                                break;
+                            }
+                        }
+                        }
+                    else if (cdv == '3'){
+                        glitter();
+                    }
+                    break;
+                 case '3':
+                    printf(" Controle financeiro e8p:\n");
+                    printf(" 0 - Limpar Buffer\n 1 - Registrar despesas\n 2 - Registrar receitas \n 3 - Consultar Saldo\n 4 - voltar ao menu principal\n");
+                    scanf(" %c", &cf);
+                    if (comando == '0'){
+                        luna();
+                        continue;
+                    }
+                    else if(cf == '1'){
+                        printf(" Digite suas despesas\n");
+                        scanf(" %f", &despesas);
+                    }
+                    else if(cf == '2'){
+                        printf(" Digite sua receita\n");
+                        scanf(" %f", &receita);
+                    }
+                    else if(cf == '3'){
+                        saldo2 = receita - despesas;
+                        printf(" Seu saldo eh: R$%.2f\n", saldo2 + saldo);
+                        break;
+                    }
+                    else if(cf == '4'){
+                        glitter();
+             }
+                 case '4':
+                 printf(" Tbom entao *-*\n");
+                 exit (0);
+
+                 default:
+                    luna();
+                    printf(":/ Comando errado\n");
+                    glitter();
+                    }
+                    break;
+            }
+}
+int main() {
+    glitter();
+}
