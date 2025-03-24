@@ -25,7 +25,7 @@
                             luna();
                             glitter();
                         case '1':
-                            printf(" Controle de estoque o.O:\n");
+                            printf(" Controle de estoque:\n");
                             printf(" 0 - Limpar Buffer\n 1 - Cadastrar um produto\n 2 - Visualizar produtos\n 3 - Voltar ao menu principal\n ");
                             scanf(" %c", &cde);
                             if (cde == '0'){
@@ -62,7 +62,7 @@
                                 }
                         break;
                         case '2':
-                            printf(" Controle de vendas p-p\n");
+                            printf(" Controle de vendas:\n");
                             printf(" 0 - Limpar Buffer\n 1 - Colocar preco\n 2 - Vender\n 3 - Vendas realizadas\n 4 - Voltar ao menu principal\n ");
                             scanf(" %c", &cdv);
                             if (cdv == '0'){
@@ -249,7 +249,7 @@
                     }
                     break;
                  case '3':
-                    printf(" Controle financeiro e8p:\n");
+                    printf(" Controle financeiro:\n");
                     printf(" 0 - Limpar Buffer\n 1 - Registrar despesas\n 2 - Registrar receitas \n 3 - Consultar Saldo\n 4 - voltar ao menu principal\n ");
                     scanf(" %c", &cf);
                     if (cf == '0'){
