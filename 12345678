@@ -17,7 +17,7 @@
         float resultado2, troco, troco1, saldo2;
         char comando, cde, cdv, cf;
         int  fmdp, cartaopassou;
-        printf(" ========================= MENU PRINCIPAL =========================\n 0 - Limpar Buffer\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n ");
+        printf("========================= MENU PRINCIPAL ==========================\n 0 - Limpar Buffer\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n ");
         scanf(" %c", &comando);
                 while (1) {
                     switch (comando){
@@ -25,7 +25,7 @@
                             luna();
                             glitter();
                         case '1':
-                            printf(" Controle de estoque:\n");
+                            printf("======================= Controle de Estoque =======================\n");
                             printf(" 0 - Limpar Buffer\n 1 - Cadastrar um produto\n 2 - Visualizar produtos\n 3 - Voltar ao menu principal\n ");
                             scanf(" %c", &cde);
                             if (cde == '0'){
@@ -62,7 +62,7 @@
                                 }
                         break;
                         case '2':
-                            printf(" Controle de vendas:\n");
+                            printf("======================= Controle de Venda =========================\n");
                             printf(" 0 - Limpar Buffer\n 1 - Colocar preco\n 2 - Vender\n 3 - Vendas realizadas\n 4 - Voltar ao menu principal\n ");
                             scanf(" %c", &cdv);
                             if (cdv == '0'){
@@ -249,7 +249,7 @@
                     }
                     break;
                  case '3':
-                    printf(" Controle financeiro:\n");
+                    printf("====================== Controle Financeiro ========================\n");
                     printf(" 0 - Limpar Buffer\n 1 - Registrar despesas\n 2 - Registrar receitas \n 3 - Consultar Saldo\n 4 - voltar ao menu principal\n ");
                     scanf(" %c", &cf);
                     if (cf == '0'){
