@@ -292,12 +292,19 @@
                         continue;
                     }
                  case '4':
-                 printf(" Tbom entao *-*\n ");
+                 printf(" Tbom entao *-*\n Mas antes...\n");
+                 printf(" SALDO TOTAL:%.2f\n", saldo);
+                 printf(" Itens vendidos:\n");
+                 if(qpoda > 0){printf(" Caneta:R$%.2f\n", poda);}
+                 if(qpodb > 0){printf(" Canetada:R$%.2f\n", podb);}
+                 if(qpodc > 0){printf(" Canetinha:R$%.2f\n", podc);}
+                 if(qpodd > 0){printf(" Caneto:R$%.2f\n", podd);}
+                 if(qpodx > 0){printf(" %s:R$%.2f\n", produto, podx);}
                  exit (0);
 
                  default:
                     luna();
-                    printf(":/ Comando errado\n ");
+                    printf(":/ Comando invalido\n ");
                     glitter();
                     }
                     break;
