@@ -330,7 +330,7 @@
                 // Encerra o programa 
                  case '4':
                  printf(" Tbom entao *-*\n Mas antes...\n");
-                 printf(" SALDO TOTAL:%.2f\n", saldo2 + saldo);
+                 printf(" SALDO TOTAL:R$%.2f\n", saldo2 + saldo);
                  printf(" Itens vendidos:\n");
                  if(qpoda > 0){printf(" Caneta:R$%.2f\n", poda);}
                  if(qpodb > 0){printf(" Canetada:R$%.2f\n", podb);}
@@ -345,8 +345,7 @@
                     printf(" Comando invalido :/\n ");
                     glitter();
                     }
-                    break;// fim forma de pagamento dinheiro
-                            // inicio pagamento em cartao
+                    break;
             }
 }
 int main() {
