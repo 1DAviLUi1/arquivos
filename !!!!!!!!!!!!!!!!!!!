@@ -66,7 +66,7 @@
                     }
                                 else{
                                     luna();
-                                    printf(" comando invalido\n");
+                                    printf(" comando invalido :/\n");
                                     continue;
                                 }
                         break;
@@ -199,12 +199,12 @@
                                 while(1){
                                 printf(" Informe a quantidade paga em dinheiro: ");
                                 if(scanf(" %f", &troco) !=1){
-                                printf(" Comando invalido \n");
+                                printf(" Comando invalido :/ \n");
                                 while (getchar() != '\n');
                                 continue;
                                 }
                                 if(troco < resultado){
-                                    printf(" Está faltando dinheiro\n");
+                                    printf(" >( que porra é essa\n");
                                 }
                                 else{
                                 troco1 = troco - resultado;
@@ -233,17 +233,17 @@
                                     break;
 
                                     case 2:
-                                    printf("Cartão não autorizado!\n");
+                                    printf("Aff...\n");
                                     break;
                                 }
                             }
                             else if(fmdp == 3){
-                                printf(" Compra cancelada\n");
+                                printf(" Compra cancelada :(\n");
                                 continue;
                             }
                             else{
                                 luna();
-                                printf("comando invalido\n");
+                                printf("comando invalido :/\n");
                                 continue;
                             }
                             // fim pagamento com cartao 
