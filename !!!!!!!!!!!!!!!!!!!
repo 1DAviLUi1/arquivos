@@ -279,7 +279,7 @@
                     }
                     else{
                         luna();
-                        printf(" comando invalido\n");
+                        printf(" comando invalido :/ \n");
                         continue;
                     }
                     break;
