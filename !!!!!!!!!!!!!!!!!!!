@@ -311,7 +311,7 @@
                     // consulta o valor que sobrou entra as receitas e despesas 
                     else if(cf == '3'){
                         saldo2 = receita - despesas;
-                        printf(" Seu saldo eh: R$%.2f\n", saldo2 + saldo);
+                        printf(" Seu saldo eh: R$%.2f ;) \n", saldo2 + saldo);
                         continue;
                         
                     }
@@ -322,7 +322,7 @@
                     // aparece caso algum numero seja digitado errado no menu finc.
                     else{
                         luna();
-                        printf(" comando invalido\n ");
+                        printf(" comando invalido :/\n ");
                         continue;
                     }
                     // fim do controle financeiro 
