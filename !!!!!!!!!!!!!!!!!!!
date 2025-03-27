@@ -269,7 +269,7 @@
                         }
                         if(qpoda == 0 && qpodb == 0 && qpodc == 0 && qpodd == 0 && qpodx == 0){
                             luna();
-                            printf(" Nenhum produto vendido recentemente \n");
+                            printf(" Nenhum produto vendido recentemente <(\n");
                             continue;
                         }
                         continue;
