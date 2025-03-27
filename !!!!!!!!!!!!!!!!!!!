@@ -42,7 +42,7 @@
                                     printf(" Quantidade do produto disponivel no estoque: ");
                                     scanf( " %d", &qadprod);
                                     produtocad = 1;
-                                    printf(" Produto cadastrado!\n");
+                                    printf(" Produto cadastrado ;)\n");
                                     continue;
                             }
                             // fim do cadastro de produto
@@ -86,12 +86,12 @@
                                 if (produtocad !=0){
                                     printf(" %s: R$", produto);
                                     scanf(" %f", &preco);
-                                    printf(" Preco cadastrado;)\n");
+                                    printf(" Preco cadastrado ;)\n");
                                     continue;
                         }
                         
                             else{
-                                printf(" Nenhum produto cadastrado recentemente \n");
+                                printf(" Nenhum produto cadastrado recentemente o>O \n");
                                 continue;
                         }
                         // fim cadstro preço
