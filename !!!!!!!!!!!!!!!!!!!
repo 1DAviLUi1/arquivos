@@ -208,7 +208,7 @@
                                 }
                                 else{
                                 troco1 = troco - resultado;
-                                printf(" Entregue: %.2fR$ de troco para o cliente\n Muito obrigdo pela compra!\n", troco1);
+                                printf(" Entregue: %.2fR$ de troco para o cliente\n FEITO!!!!111!!!11!!1!!!!1!1111!!!!\n", troco1);
                                 saldo = resultado + saldo;
                                 glitter();
                                 }
