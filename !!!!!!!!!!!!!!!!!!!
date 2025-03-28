@@ -42,7 +42,7 @@
                                     printf(" Quantidade do produto disponivel no estoque: ");
                                     scanf( " %d", &qadprod);
                                     produtocad = 1;
-                                    printf(" Produto cadastrado ;)\n");
+                                    printf(" Produto cadastrado \n");
                                     continue;
                             }
                             // fim do cadastro de produto
@@ -66,7 +66,7 @@
                     }
                                 else{
                                     luna();
-                                    printf(" comando invalido :/\n");
+                                    printf(" comando invalido \n");
                                     continue;
                                 }
                         break;
@@ -86,12 +86,12 @@
                                 if (produtocad !=0){
                                     printf(" %s: R$", produto);
                                     scanf(" %f", &preco);
-                                    printf(" Preco cadastrado ;)\n");
+                                    printf(" Preco cadastrado \n");
                                     continue;
                         }
                         
                             else{
-                                printf(" Nenhum produto cadastrado recentemente o>O \n");
+                                printf(" Nenhum produto cadastrado recentemente  \n");
                                 continue;
                         }
                         // fim cadstro preço
@@ -100,7 +100,7 @@
                     else if (cdv == '2'){
 
                         printf(" Produtos:\n");
-                        printf(" 01 - Caneta  R$10.00                  03 - Papel  R$15.00\n");
+                        printf(" 01 - Caneta  R$10.00               03 - Papel  R$15.00\n");
                         printf(" 02 - Lapis  R$20.00                04 - Cartolina  R$25.00\n");
                         if (produtocad !=0) {
                             printf(" 05 - %s - R$%.2f\n", produto, preco);
@@ -154,7 +154,7 @@
                         }
                         else{
                             luna();
-                            printf("comando invalido :/\n");
+                            printf("comando invalido \n");
                             continue;
                         }
                         // fim venda
@@ -199,16 +199,16 @@
                                 while(1){
                                 printf(" Informe a quantidade paga em dinheiro: ");
                                 if(scanf(" %f", &troco) !=1){
-                                printf(" Comando invalido :/ \n");
+                                printf(" Comando invalido  \n");
                                 while (getchar() != '\n');
                                 continue;
                                 }
                                 if(troco < resultado){
-                                    printf(" >( que porra é essa\n");
+                                    printf(" que porra é essa\n");
                                 }
                                 else{
                                 troco1 = troco - resultado;
-                                printf(" Entregue: %.2fR$ de troco para o cliente\n FEITO!!!!111!!!11!!1!!!!1!1111!!!!\n", troco1);
+                                printf(" Entregue: %.2fR$ de troco para o cliente\n \n", troco1);
                                 saldo = resultado + saldo;
                                 glitter();
                                 }
@@ -222,7 +222,7 @@
                                 scanf(" %d", &cartaopassou);
                                 switch(cartaopassou){
                                     case 1:
-                                    printf(" Compra realizada ;)\n");
+                                    printf(" Compra realizada \n");
                                     saldo = saldo + resultado;
                                     if (escpod == 1) poda += resultado;
                                             else if (escpod == 2) podb += resultado;
@@ -233,17 +233,17 @@
                                     break;
 
                                     case 2:
-                                    printf(" :V Aff...\n");
+                                    printf(" Cartão não autorizado! Tente novamente.\n");
                                     break;
                                 }
                             }
                             else if(fmdp == 3){
-                                printf(" Compra cancelada :(\n");
+                                printf(" Compra cancelada \n");
                                 continue;
                             }
                             else{
                                 luna();
-                                printf("comando invalido :/\n");
+                                printf("comando invalido \n");
                                 continue;
                             }
                             // fim pagamento com cartao 
@@ -279,7 +279,7 @@
                     }
                     else{
                         luna();
-                        printf(" comando invalido :/ \n");
+                        printf(" comando invalido  \n");
                         continue;
                     }
                     break;
@@ -322,20 +322,20 @@
                     // aparece caso algum numero seja digitado errado no menu finc.
                     else{
                         luna();
-                        printf(" comando invalido :/\n ");
+                        printf(" comando invalido \n ");
                         continue;
                     }
                     // fim do controle financeiro 
                     
                 // Encerra o programa 
                  case '4':
-                 printf(" Tbom entao *-*\n Mas antes...\n");
+                 printf(" Volte sempre \n Mas antes...\n");
                  printf(" SALDO TOTAL:R$%.2f\n", saldo2 + saldo);
                  printf(" Itens vendidos:\n");
                  if(qpoda > 0){printf(" Caneta:R$%.2f\n", poda);}
-                 if(qpodb > 0){printf(" Canetada:R$%.2f\n", podb);}
-                 if(qpodc > 0){printf(" Canetinha:R$%.2f\n", podc);}
-                 if(qpodd > 0){printf(" Caneto:R$%.2f\n", podd);}
+                 if(qpodb > 0){printf(" Lapis:R$%.2f\n", podb);}
+                 if(qpodc > 0){printf(" Papel:R$%.2f\n", podc);}
+                 if(qpodd > 0){printf(" Cartolina:R$%.2f\n", podd);}
                  if(qpodx > 0){printf(" %s:R$%.2f\n", produto, podx);}
                  exit (0);
                 
