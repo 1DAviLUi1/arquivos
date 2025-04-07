@@ -6,10 +6,10 @@ char produto[500][100];
 int algmemata[500], escpod, qadprod[500], produtocad = 0, totpod = 0, mf;
 int qpod[] = {0, 0, 0, 0, 0};
 float poda = 0, podb = 0, podc = 0, podd = 0;
-void tnhokinnocharizard(){
-    for(int canon = 0; canon < 500; canon++){
-        algmemata[canon] = 5;
-    }
+void tnhokinnocharizard() {
+	for(int canon = 0; canon < 500; canon++) {
+		algmemata[canon] = 5;
+	}
 }
 void luna() {
 #ifdef _WIN32
@@ -49,9 +49,9 @@ void glitter() {
 				printf(" Digite o preco: ");
 				scanf(" %f", &preco[totpod]);
 				printf(" Produto cadastrado =3\n");
-				for (int nikon = 0; nikon < totpod; nikon++){
-			    algmemata[totpod]++;
-			}
+				for (int nikon = 0; nikon < totpod; nikon++) {
+					algmemata[totpod]++;
+				}
 				totpod++;
 				continue;
 			}
@@ -97,10 +97,10 @@ void glitter() {
 				printf(" 1 - Caneta R$10.00\t\t\t 2 - Lapis R$20.00\n");
 				printf(" 3 - Papel R$15.00\t\t\t 4 - Cartolina R$25.00\n");
 				if (totpod !=0) {
-					for (int elf = 0; elf < totpod; elf++){
+					for (int elf = 0; elf < totpod; elf++) {
 						printf(" %d - %s - R$%.2f\t\t\t", algmemata[elf], produto[elf], preco[elf]);
-						if( (elf + 1) %2 == 0){
-						    printf("\n");
+						if( (elf + 1) %2 == 0) {
+							printf("\n");
 						}
 					}
 				}
@@ -117,7 +117,6 @@ void glitter() {
 					scanf(" %f", &escpod2);
 					resultado = 10* escpod2;
 					printf(" O valor total ficou: %.2fR$\n", resultado);
-					qpod[0] = escpod2;
 				}
 				else if(escpod == 2) {
 					printf(" Lapis - R$20.00\n");
@@ -125,7 +124,6 @@ void glitter() {
 					scanf(" %f", &escpod2);
 					resultado = 20* escpod2;
 					printf(" O valor total ficou: %.2fR$\n", resultado);
-					qpod[1] = escpod2;
 				}
 				else if(escpod == 3) {
 					printf(" Papel - R$15.00\n");
@@ -133,7 +131,6 @@ void glitter() {
 					scanf(" %f", &escpod2);
 					resultado = 15* escpod2;
 					printf(" O valor total ficou: %.2fR$\n", resultado);
-					qpod[2] = escpod2;
 				}
 				else if(escpod == 4) {
 					printf(" Cartolina - R$25.00\n");
@@ -141,16 +138,15 @@ void glitter() {
 					scanf(" %f", &escpod2);
 					resultado = 25* escpod2;
 					printf(" O valor total ficou: %.2fR$\n", resultado);
-					qpod[3] = escpod2;
 				}
-				else if(escpod >= 5 && escpod < 5 + totpod){
-				    mf = escpod - 5;
-				    printf(" %s - R$%.2f\n", produto[mf], preco[mf]);
-				    printf(" Selecione a quantidade desejada: ");
-				    scanf(" %f", &escpod2);
-				    resultado = preco[mf]* escpod2;
-				    printf(" O valor total ficou: %.2fR$\n", resultado);
-				    qpod[mf] = escpod2;
+				else if(escpod >= 5 && escpod < 5 + totpod) {
+					mf = escpod - 5;
+					printf(" %s - R$%.2f\n", produto[mf], preco[mf]);
+					printf(" Selecione a quantidade desejada: ");
+					scanf(" %f", &escpod2);
+					resultado = preco[mf]* escpod2;
+					printf(" O valor total ficou: %.2fR$\n", resultado);
+					qpod[mf] = escpod2;
 				}
 				else {
 					luna();
@@ -168,10 +164,10 @@ void glitter() {
 						resultado2 = resultado* (18.00/100.00);
 						resultado = resultado - resultado2;
 						printf(" %.2fR$\n", resultado);
-						if (escpod == 1) poda += resultado;
-						else if (escpod == 2) podb += resultado;
-						else if (escpod == 3) podc += resultado;
-						else if (escpod == 4) podd += resultado;
+						if (escpod == 1){ poda += resultado;}
+						else if (escpod == 2){ podb += resultado;}
+						else if (escpod == 3){ podc += resultado;}
+						else if (escpod == 4){ podd += resultado;}
 					}
 					else if(resultado >=50) {
 						printf(" Desconto adicionado, valor total ficou de:");
@@ -207,6 +203,10 @@ void glitter() {
 							troco1 = troco - resultado;
 							printf(" TUDO CERTO ;)");
 							printf(" Entregue: %.2fR$ de troco para o cliente\n \n", troco1);
+							if(escpod == 1)qpod[0] = escpod2;
+							if(escpod == 2)qpod[0] = escpod2;
+							if(escpod == 3)qpod[0] = escpod2;
+							if(escpod == 4)qpod[0] = escpod2;
 							saldo = resultado + saldo;
 							glitter();
 						}
@@ -226,16 +226,20 @@ void glitter() {
 						else if (escpod == 2) podb += resultado;
 						else if (escpod == 3) podc += resultado;
 						else if (escpod == 4) podd += resultado;
+						if(escpod == 1)qpod[0] = escpod2;
+						if(escpod == 2)qpod[0] = escpod2;
+						if(escpod == 3)qpod[0] = escpod2;
+						if(escpod == 4)qpod[0] = escpod2;
 						glitter();
 						break;
 
 					case 2:
 						printf(" ;( Aff... \n");
 						continue;
-						
+
 					default:
-					    printf(" C0m4nd0 1nv4l1d0 :/\n");
-					    continue;
+						printf(" C0m4nd0 1nv4l1d0 :/\n");
+						continue;
 					}
 				}
 				else if(fmdp == 3) {
@@ -327,7 +331,7 @@ void glitter() {
 
 		// Encerra o programa
 		case '4':
-			printf(" programa encerrado p-p \n Informaçoes que talvez vc se importe:\n");
+			printf(" programa encerrado p-p \n InformaC'oes que talvez vc se importe:\n");
 			printf(" SALDO TOTAL:R$%.2f\n", saldo2 + saldo);
 			printf(" Itens vendidos - ");
 			if(qpod[0] > 0) {
@@ -355,7 +359,7 @@ void glitter() {
 	}
 }
 int main() {
-    tnhokinnocharizard();
+	tnhokinnocharizard();
 	glitter();
 }
 // fim do programa
