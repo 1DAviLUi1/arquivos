@@ -69,8 +69,9 @@ void glitter() {
 				printf(" |Papel - 20 unidades |\n");
 				printf(" |Cartolina - 15 unidades|\n");
 				if (totpod != 0) {
-				    for(int fodamse = 0; fodamse < totpod; fodamse++)
+				    for(int fodamse = 0; fodamse < totpod; fodamse++){
 						printf(" |%s - %d unidades|\n", f[fodamse].nomep, f[fodamse].podqan);
+				    }
 				}
 				else {}
 				continue;
