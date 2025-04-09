@@ -4,7 +4,7 @@
 float escpod2 = 0, resultado = 0, preco[500], saldo = 0, receita = 0, despesas = 0;
 char produto[500][100];
 int algmemata[500], escpod, qadprod[500], produtocad = 0, totpod = 0, mf;
-int qpod[] = {0, 0, 0, 0, 0};
+int qpod[500] = {0, 0, 0, 0}, opium = 4;
 float poda = 0, podb = 0, podc = 0, podd = 0;
 void tnhokinnocharizard() {
 	for(int canon = 0; canon < 500; canon++) {
@@ -16,6 +16,7 @@ struct vendpod{
     int podqan;
     float precop;
 };
+struct vendpod pod[500];
 void luna() {
 #ifdef _WIN32
 	system("cls");
@@ -31,7 +32,6 @@ void glitter() {
 	// Menu principal
 	printf("\033[1;31m========================= MENU PRINCIPAL =========================\033[0m\n 0 - Limpar Buffer\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n ");
 	scanf(" %c", &comando);
-	struct vendpod f[500];
 	while (1) {
 		switch (comando) {
 		case '0':
@@ -49,14 +49,18 @@ void glitter() {
 			// cadastro de produto
 			else if (cde == '1') {
 		        printf(" Cadastre o nome do produto: ");
-		        scanf(" %s", &f[totpod].nomep);
+		        scanf(" %s", &pod[totpod].nomep);
 		        printf(" Cadastre a quantiade disponivel no estoque: ");
-		        scanf(" %d", &f[totpod].podqan);
+		        scanf(" %d", &pod[totpod].podqan);
 		        printf(" Cadastre o preco do produto: ");
-		        scanf(" %f", &f[totpod].precop);
+		        scanf(" %f", &pod[totpod].precop);
+		        printf(" Produto cadastrado :3\n");
 		        for (int nikon = 0; nikon < totpod; nikon++) {
 					algmemata[totpod]++;
 				}
+				for(int fodamse = 0; fodamse < totpod; fodamse++){
+						printf(" |%s - %d unidades|\n", pod[fodamse].nomep, pod[fodamse].podqan);
+				    }
 		        totpod++;
 				continue;
 			}
@@ -70,7 +74,7 @@ void glitter() {
 				printf(" |Cartolina - 15 unidades|\n");
 				if (totpod != 0) {
 				    for(int fodamse = 0; fodamse < totpod; fodamse++){
-						printf(" |%s - %d unidades|\n", f[fodamse].nomep, f[fodamse].podqan);
+						printf(" |%s - %d unidades|\n", pod[fodamse].nomep, pod[fodamse].podqan);
 				    }
 				}
 				else {}
@@ -103,7 +107,7 @@ void glitter() {
 				printf(" 3 - Papel R$15.00\t\t\t 4 - Cartolina R$25.00\n");
 				if (totpod !=0) {
 					for (int elf = 0; elf < totpod; elf++) {
-						printf(" %d - %s - R$%.2f\t\t\t", algmemata[elf], f[elf].nomep, f[elf].precop);
+						printf(" %d - %s - R$%.2f\t\t\t", algmemata[elf], pod[elf].nomep, pod[elf].precop);
 						if( (elf + 1) %2 == 0) {
 							printf("\n");
 						}
@@ -146,12 +150,11 @@ void glitter() {
 				}
 				else if(escpod >= 5 && escpod < 5 + totpod) {
 					mf = escpod - 5;
-					printf(" %s - R$%.2f\n", produto[mf], preco[mf]);
+					printf(" %s - R$%.2f\n", pod[mf].nomep, pod[mf].precop);
 					printf(" Selecione a quantidade desejada: ");
 					scanf(" %f", &escpod2);
-					resultado = preco[mf]* escpod2;
+					resultado = pod[mf].precop* escpod2;
 					printf(" O valor total ficou: %.2fR$\n", resultado);
-					qpod[mf] = escpod2;
 				}
 				else {
 					luna();
@@ -212,6 +215,8 @@ void glitter() {
 							if(escpod == 2)qpod[0] = escpod2;
 							if(escpod == 3)qpod[0] = escpod2;
 							if(escpod == 4)qpod[0] = escpod2;
+							if(escpod == mf)qpod[opium] = escpod2;
+							opium++;
 							saldo = resultado + saldo;
 							glitter();
 						}
@@ -235,6 +240,7 @@ void glitter() {
 						if(escpod == 2)qpod[0] = escpod2;
 						if(escpod == 3)qpod[0] = escpod2;
 						if(escpod == 4)qpod[0] = escpod2;
+						if(escpod == mf)qpod[opium] = escpod2;
 						glitter();
 						break;
 
@@ -274,9 +280,9 @@ void glitter() {
 				if(qpod[3] > 0) {
 					printf(" Cartolina %.2fR$\n", podd);
 				}
-				if(qpod[mf] > 0){
+				if(qpod[opium] > 0){
 				    for(int j = 0; j < mf; j++){
-				        printf(" %s 0.00R$\n", produto[j]);
+				        printf(" %s 0.00R$\n", pod[j].nomep);
 				    }
 				}
 				if(qpod[0] == 0 && qpod[1] == 0 && qpod[2] == 0 && qpod[3] == 0) {
@@ -341,7 +347,7 @@ void glitter() {
 
 		// Encerra o programa
 		case '4':
-			printf(" programa encerrado p-p \n InformaC'oes que talvez vc se importe:\n");
+			printf(" programa encerrado p-p \n InformaCaoes que talvez vc se importe:\n");
 			printf(" SALDO TOTAL:R$%.2f\n", saldo2 + saldo);
 			printf(" Itens vendidos - ");
 			if(qpod[0] > 0) {
@@ -355,6 +361,11 @@ void glitter() {
 			}
 			if(qpod[3] > 0) {
 				printf(" Cartolina - R$%.2f\n", podd);
+			}
+			if(qpod[opium] > 0){
+			    for(int nfodocomnenhumdevcs = 0; nfodocomnenhumdevcs < opium; nfodocomnenhumdevcs++){
+			        printf(" %s - R$00\n", pod[nfodocomnenhumdevcs].nomep);
+			    }
 			}
 			else printf(" Nenhum item vendido :'(");
 			exit (0);
