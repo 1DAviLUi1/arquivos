@@ -1,0 +1,395 @@
+//xD
+#include <stdio.h>
+#include <stdlib.h>
+float escpod2 = 0, resultado = 0, preco[500], saldo = 0, saldo2 = 0, receita = 0, despesas = 0;
+char produto[500][100];
+int algmemata[500], escpod, qadprod[500], produtocad = 0, totpod = 0, mf, mf2 = 0;
+int qpod[500] = {0, 0, 0, 0}, opium = 4;
+float poda = 0, podb = 0, podc = 0, podd = 0, podopium[500];
+void tnhokinnocharizard() {
+	for(int canon = 0; canon < 500; canon++) {
+		algmemata[canon] = 5;
+	}
+}
+struct vendpod{
+    char nomep [100];
+    int podqan;
+    float precop;
+};
+struct vendpod pod[500];
+void luna() {
+#ifdef _WIN32
+	system("cls");
+#else
+	system("clear");
+#endif
+}
+// Inicio do programa
+void glitter() {
+	float resultado2, troco, troco1;
+	char comando, cde, cdv, cf;
+	int  fmdp, cartaopassou;
+	// Menu principal
+	printf("\033[1;31m========================= MENU PRINCIPAL =========================\033[0m\n 0 - Limpar Buffer\n 1 - Controle de Estoque \n 2 - Controle de Venda \n 3 - Controle Financeiro \n 4 - Encerrar programa\n ");
+	scanf(" %c", &comando);
+	while (1) {
+		switch (comando) {
+		case '0':
+			luna();
+			glitter();
+		// inicio do controle de estoque
+		case '1':
+			printf("======================= Controle de Estoque =======================\n");
+			printf(" 0 - Limpar Buffer\n 1 - Cadastrar um produto\n 2 - Visualizar produtos\n 3 - Voltar ao menu principal\n ");
+			scanf(" %c", &cde);
+			if (cde == '0') {
+				luna();
+				continue;
+			}
+			// cadastro de produto
+			else if (cde == '1') {
+		        printf(" Cadastre o nome do produto: ");
+		        scanf(" %s", pod[totpod].nomep);
+		        while(1){
+		        printf(" Cadastre a quantiade disponivel no estoque: ");
+		        if(scanf(" %d", &pod[totpod].podqan) !=1) {
+							printf(" Comando invalido  :/\n");
+							while (getchar() != '\n');
+							continue;
+						}
+						break;
+		        }
+		        while(1){
+		        printf(" Cadastre o preco do produto: ");
+		        if(scanf(" %f", &pod[totpod].precop) !=1) {
+							printf(" Comando invalido  :/\n");
+							while (getchar() != '\n');
+							continue;
+						}
+						break;
+		        }
+		        printf(" Produto cadastrado :3\n");
+		        for (int nikon = 0; nikon < totpod; nikon++) {
+					algmemata[totpod] = 5 + totpod;
+				}
+				for(int fodamse = 0; fodamse < totpod; fodamse++){
+						printf(" |%s - %d unidades|\n", pod[fodamse].nomep, pod[fodamse].podqan);
+				    }
+		        totpod++;
+				continue;
+			}
+			// fim do cadastro de produto
+			// inicio visualizar produtos
+			else if (cde == '2') {
+			    
+				printf(" |Caneta - 50 unidades|\n");
+				printf(" |Lapis - 30 unidades|\n");
+				printf(" |Papel - 20 unidades |\n");
+				printf(" |Cartolina - 15 unidades|\n");
+				if (totpod != 0) {
+				    for(int fodamse = 0; fodamse < totpod; fodamse++){
+						printf(" |%s - %d unidades|\n", pod[fodamse].nomep, pod[fodamse].podqan);
+				    }
+				}
+				else {}
+				continue;
+				// fim visualizar produto
+			}
+			else if (cde == '3') {
+				glitter();
+			}
+			else {
+				luna();
+				printf(" comando invalido :/\n");
+				continue;
+			}
+			break;
+		// fim do controle de estoque
+
+		// inicio controle de venda
+		case '2':
+			printf("======================= Controle de Vendas =======================\n");
+			printf(" 0 - Limpar Buffer\n 1 - Vender\n 2 - Vendas realizadas\n 3 - Voltar ao menu principal\n ");
+			scanf(" %c", &cdv);
+			if (cdv == '0') {
+				luna();
+				continue;
+			}
+			if (cdv == '1') {
+				printf(" Produtos:\n");
+				printf(" 1 - Caneta R$10.00\t\t\t 2 - Lapis R$20.00\n");
+				printf(" 3 - Papel R$15.00\t\t\t 4 - Cartolina R$25.00\n");
+				if (totpod !=0) {
+					for (int elf = 0; elf < totpod; elf++) {
+						printf(" %d - %s - R$%.2f\t\t\t", algmemata[elf], pod[elf].nomep, pod[elf].precop);
+						if( (elf + 1) %2 == 0) {
+							printf("\n");
+						}
+					}
+				}
+				else {}
+				printf(" \nSelecione o produto a ser vendido: ");
+				scanf(" %d", &escpod);
+				if (escpod == 0) {
+					luna();
+					continue;
+				}
+				else if(escpod == 1) {
+					printf(" Caneta - R$10.00\n");
+					printf(" Selecione a quantidade desejada: ");
+					scanf(" %f", &escpod2);
+					resultado = 10* escpod2;
+					printf(" O valor total ficou: %.2fR$\n", resultado);
+				}
+				else if(escpod == 2) {
+					printf(" Lapis - R$20.00\n");
+					printf(" Selecione a quantidade desejada: ");
+					scanf(" %f", &escpod2);
+					resultado = 20* escpod2;
+					printf(" O valor total ficou: %.2fR$\n", resultado);
+				}
+				else if(escpod == 3) {
+					printf(" Papel - R$15.00\n");
+					printf(" Selecione a quantidade desejada: ");
+					scanf(" %f", &escpod2);
+					resultado = 15* escpod2;
+					printf(" O valor total ficou: %.2fR$\n", resultado);
+				}
+				else if(escpod == 4) {
+					printf(" Cartolina - R$25.00\n");
+					printf(" Selecione a quantidade desejada: ");
+					scanf(" %f", &escpod2);
+					resultado = 25* escpod2;
+					printf(" O valor total ficou: %.2fR$\n", resultado);
+				}
+				else if(escpod >= 5 && escpod < 5 + totpod) {
+					mf = escpod - 5;
+                    mf2 = mf;
+                    printf(" %s - R$%.2f\n", pod[mf].nomep, pod[mf].precop);
+                    printf(" Selecione a quantidade desejada: ");
+                    scanf(" %f", &escpod2);
+                    resultado = pod[mf].precop * escpod2;
+                    printf(" O valor total ficou: %.2fR$\n", resultado);
+				}
+				else {
+					luna();
+					printf("o.O tu digito %d esperava oq??? comando obviamente invalido :/ \n", escpod);
+					continue;
+				}
+				// fim venda
+				// inicio forma de pagamento dinheiro
+				printf(" Selecione a forma de pagamento:\n");
+				printf(" 1 - dinheiro\n 2 - cartao\n 3 - Cancelar compra\n ");
+				scanf(" %d", &fmdp);
+				if(fmdp == 1) {
+					if(resultado >=100) {
+						printf(" desconto adicionado, valor total ficou de:");
+						resultado2 = resultado* (18.00/100.00);
+						resultado = resultado - resultado2;
+						printf(" %.2fR$\n", resultado);
+					}
+					else if(resultado >=50) {
+						printf(" Desconto adicionado, valor total ficou de:");
+						resultado2 = resultado* (10.00/100.00);
+						resultado = resultado - resultado2;
+						printf(" %.2fR$\n", resultado);
+					}
+					else if (resultado <50) {
+						printf(" Desconto adicionado, valor total ficou de:");
+						resultado2 = resultado* (5.00/100.00);
+						resultado = resultado - resultado2;
+						printf(" %.2fR$\n", resultado);
+					}
+					while(1) {
+						printf(" Informe a quantidade paga em dinheiro: ");
+						if(scanf(" %f", &troco) !=1) {
+							printf(" Comando invalido  :/\n");
+							while (getchar() != '\n');
+							continue;
+						}
+						if(troco < resultado) {
+							printf(" Que porra eh essa >(\n");
+						}
+						else {
+							troco1 = troco - resultado;
+							printf(" TUDO CERTO ;)");
+							printf(" Entregue: %.2fR$ de troco para o cliente\n \n", troco1);
+							if(escpod == 1) qpod[0] = escpod2;
+                            else if(escpod == 2) qpod[1] = escpod2;
+                            else if(escpod == 3) qpod[2] = escpod2;
+                            else if(escpod == 4) qpod[3] = escpod2;
+                            else if(escpod >= 5) qpod[mf + 4] += escpod2;
+                            if(escpod == 1) poda += resultado;
+                            else if(escpod == 2) podb += resultado;
+                            else if(escpod == 3) podc += resultado;
+                            else if(escpod == 4) podd += resultado;
+                            else if(escpod >= 5) podopium[mf] += resultado;
+                            saldo += resultado;
+                            opium++;
+							glitter();
+						}
+					}
+					// fim forma de pagamento dinheiro
+					// inicio pagamento em cartao
+				}
+				else if(fmdp == 2) {
+					printf(" Cartao passou?\n");
+					printf(" 1 - Cartao passou\n 2 - Cartao nao passou\n ");
+					scanf(" %d", &cartaopassou);
+					switch(cartaopassou) {
+					case 1:
+						printf(" Compra realizada ;)\n");
+						saldo = saldo + resultado;
+						if (escpod == 1) poda += resultado;
+						else if (escpod == 2) podb += resultado;
+						else if (escpod == 3) podc += resultado;
+						else if (escpod == 4) podd += resultado;
+						else if (escpod >=5) podopium[mf] += resultado;
+						if(escpod == 1)qpod[0] = escpod2;
+						if(escpod == 2)qpod[1] = escpod2;
+						if(escpod == 3)qpod[2] = escpod2;
+						if(escpod == 4)qpod[3] = escpod2; printf(" \033[1;34m%d\n\033[0m", qpod[3]);
+						if(escpod >= 5)qpod[mf + 4] += escpod2; printf(" \033[1;34m%d\033[0m\n", qpod[opium]);
+						glitter();
+					
+						break;
+
+					case 2:
+						printf(" ;( Aff... \n");
+						continue;
+
+					default:
+						printf(" C0m4nd0 1nv4l1d0 :/\n");
+						continue;
+					}
+				}
+				else if(fmdp == 3) {
+					printf(" Compra cancelada (0_0)\n");
+					continue;
+				}
+				else {
+					luna();
+					printf("comando invalido :/\n");
+					continue;
+				}
+				// fim pagamento com cartao
+			}
+
+			// historico de vendas
+			else if(cdv == '2') {
+				printf(" Produtos vendidos:\n");
+				if(qpod[0] > 0) {
+					printf(" Caneta %.2fR$\n", poda);
+				}
+				if(qpod[1] > 0) {
+					printf(" Lapis %.2fR$\n", podb);
+				}
+				if(qpod[2] > 0) {
+					printf(" Papel %.2fR$\n", podc);
+				}
+				if(qpod[3] > 0) {
+					printf(" Cartolina %.2fR$\n", podd);
+				}
+				for (int j = 0; j < totpod; j++) {
+                    if (qpod[j + 4] > 0) {
+                    printf(" %s %.2fR$\n",pod[j].nomep, podopium[j]);
+                }
+            }
+				if(qpod[0] == 0 && qpod[1] == 0 && qpod[2] == 0 && qpod[3] == 0 && qpod[mf + 4] == 0) {
+					luna();
+					printf(" Nenhum produto vendido recentemente <(\n");
+					continue;
+				}
+				continue;
+			}
+			else if (cdv == '3') {
+				glitter();
+			}
+			else {
+				luna();
+				printf(" comando invalido  :/\n");
+				continue;
+			}
+			break;
+		// fim controle de vendas
+
+		// inicio do controle Financeiro
+
+		// menu do controle Financeiro
+		case '3':
+			printf("======================= Controle Financeiro =======================\n");
+			printf(" 0 - Limpar Buffer\n 1 - Registrar despesas\n 2 - Registrar receitas \n 3 - Consultar Saldo\n 4 - voltar ao menu principal\n ");
+			scanf(" %c", &cf);
+			if (cf == '0') {
+				luna();
+				continue;
+			}
+			// registro de despesas (todas as saidas de dinheiro)
+			else if(cf == '1') {
+				printf(" Digite suas despesas\n ");
+				scanf(" %f", &despesas);
+				continue;
+			}
+			// registro de receitas (todos as entradas de dinheiro)
+			else if(cf == '2') {
+				printf(" Digite sua receita\n ");
+				scanf(" %f", &receita);
+				continue;
+			}
+			// consulta o valor que sobrou entra as receitas e despesas
+			else if(cf == '3') {
+				saldo2 = receita - despesas;
+				printf(" Seu saldo eh: R$%.2f ;) \n", saldo2 + saldo);
+				continue;
+
+			}
+			// volta ao menu principal
+			else if(cf == '4') {
+				glitter();
+			}
+			// aparece caso algum numero seja digitado errado no menu finc.
+			else {
+				luna();
+				printf(" comando invalido :/\n ");
+				continue;
+			}
+		// fim do controle financeiro
+
+		// Encerra o programa
+		case '4':
+			printf(" programa encerrado p-p \n InformaCaoes que talvez vc se importe:\n");
+			printf(" SALDO TOTAL:R$%.2f\n", saldo2 + saldo);
+			printf(" Itens vendidos -\n");
+			if(qpod[0] > 0) {
+				printf(" Caneta - R$%.2f\n", poda);
+			}
+			if(qpod[1] > 0) {
+				printf(" Lapis - R$%.2f\n", podb);
+			}
+			if(qpod[2] > 0) {
+				printf(" Papel - R$%.2f\n", podc);
+			}
+			if(qpod[3] > 0) {
+				printf(" Cartolina - R$%.2f\n", podd);
+			}
+		    for (int j = 0; j < totpod; j++) {
+                if (qpod[j + 4] > 0) {
+                    printf(" %s - R$%.2f\n", pod[j].nomep, podopium[j]);
+                }
+            }
+			exit (0);
+
+		// aparece caso algum numero seja digitado errado no menu princ.
+		default:
+			luna();
+			printf(" Comando invalido :/\n ");
+			glitter();
+		}
+		break;
+	}
+}
+int main() {
+	tnhokinnocharizard();
+	glitter();
+}
+// fim do programa
