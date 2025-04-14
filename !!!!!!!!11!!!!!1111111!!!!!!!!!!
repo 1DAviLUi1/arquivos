@@ -1,0 +1,469 @@
+//xD
+#include <stdio.h>
+#include <stdlib.h>
+float escpod2 = 0, resultado = 0.00, preco[500], saldo = 0.00, saldo2 = 0.00, receita = 0.00, despesas = 0.00, rec, desp;
+char produto[500][100];
+int algmemata[500], escpod, qadprod[500], produtocad = 0, totpod = 0, mf, mf2 = 0, editpod, fm5;
+int qpod[500] = {0, 0, 0, 0}, opium = 4;
+float poda = 0, podb = 0, podc = 0, podd = 0, podopium[500];
+void tnhokinnocharizard() {
+	for(int canon = 0; canon < 500; canon++) {
+		algmemata[canon] = 5;
+	}
+}
+struct vendpod{
+    char nomep [100];
+    int podqan;
+    float precop;
+};
+struct vendpod pod[500] ={
+    {"", 0, 0.0},
+    {"", 0, 0.0},
+    {"", 0, 0.0},
+    {"", 0, 0.0},
+    {"Caneta", 50, 10.00},
+    {"Lapis", 30, 20.00},
+    {"Papel", 20, 15.00},
+    {"Cartolina", 15, 25.00}
+};
+void luna() {
+#ifdef _WIN32
+	system("cls");
+#else
+	system("clear");
+#endif
+}
+// Inicio do programa
+void glitter() {
+	float resultado2, troco, troco1;
+	char comando, cde, cdv, cf;
+	int  fmdp, cartaopassou;
+	// Menu principal
+	printf("\033[1;92m========================= MENU PRINCIPAL =========================\033[0m\n");
+    printf(" \033[1;38;5;206m0 - Limpar Buffer\033[0m\n \033[1;38;5;117m1 - Controle de Estoque\033[0m\n \033[1;38;5;227m2 - Controle de Venda\033[0m\n \033[1;38;5;156m3 - Controle Financeiro\033[0m\n \033[1;38;5;219m4 - Encerrar programa\033[0m\n ");
+	scanf(" %c", &comando);
+	while (1) {
+		switch (comando) {
+		case '0':
+			luna();
+			glitter();
+		// inicio do controle de estoque
+		case '1':
+			printf("\033[1;38;5;214m======================= Controle de Estoque =======================\033[0m\n");
+			printf(" \033[1;38;5;206m0 - Limpar Buffer\033[0m\n \033[1;38;5;117m1 - Cadastrar um produto\033[0m\n \033[1;38;5;227m2 - Editar produtos\033[0m\n \033[1;38;5;156m3 - Ver Produtos\033[0m\n \033[1;38;5;219m4 - Voltar ao menu principal\033[0m\n ");
+			scanf(" %c", &cde);
+			if (cde == '0') {
+				luna();
+				continue;
+			}
+			// cadastro de produto
+			else if (cde == '1') {
+		        printf(" \033[1;38;5;68mCadastre o nome do Produto:\033[0m ");
+		        scanf(" %s", pod[totpod].nomep);
+		        while(1){
+		        printf(" \033[1;38;5;68mCadastre a quantidade disponivel:\033[0m ");
+		        if(scanf(" %d", &pod[totpod].podqan) !=1) {
+							printf(" \033[1;91mComando invalido  :/\033[0m\n");
+							while (getchar() != '\n');
+							continue;
+						}
+						break;
+		        }
+		        while(1){
+		        printf(" \033[1;38;5;68mCadastre o preco do produto:\033[0m ");
+		        if(scanf(" %f", &pod[totpod].precop) !=1) {
+							printf(" \033[1;91mComando invalido  :/\033[0m\n");
+							while (getchar() != '\n');
+							continue;
+						}
+						break;
+		        }
+		        printf(" \033[1;38;5;112mProduto cadastrado :3\033[0m\n");
+		        for (int nikon = 0; nikon < totpod; nikon++) {
+					algmemata[totpod] = 5 + totpod;
+				}
+		        totpod++;
+				continue;
+			}
+			// fim do cadastro de produto
+			// inicio editor de produtos
+			else if (cde == '2') {
+				printf("\n \033[1;38;5;206m0 - Voltar ao controle de estoque\033[0m\n\n");
+			    printf(" \033[1;38;5;39mProdutos Cadastrados:\033[0m\n");
+				printf(" \033[1;38;5;214m1 - %s - %d unidades - R$%.2f\033[0m \n", pod[4].nomep, pod[4].podqan, pod[4].precop);
+				printf(" \033[1;38;5;214m2 - %s - %d unidades - R$%.2f\033[0m \n", pod[5].nomep, pod[5].podqan, pod[5].precop);
+				printf(" \033[1;38;5;214m3 - %s - %d unidades - R$%.2f\033[0m \n", pod[6].nomep, pod[6].podqan, pod[6].precop);
+				printf(" \033[1;38;5;214m4 - %s - %d unidades - R$%.2f\033[0m \n", pod[7].nomep, pod[7].podqan, pod[7].precop);
+				if (totpod != 0) {
+				    for(int fodamse = 0; fodamse < totpod; fodamse++){
+						printf(" \033[1;38;5;214m%d - %s - %d unidades - R$%.2f\033[0m\n", algmemata[fodamse], pod[fodamse].nomep, pod[fodamse].podqan, pod[fodamse].precop);
+				    }
+				}
+				else
+				    printf(" \033[1;38;5;68mSelecione o produto que deseja editar:\033[0m ");
+				    scanf(" %d", &editpod);
+				    if(editpod == 1){
+				        printf(" \033[1;38;5;208mNome atual: %s\033[0m \n \033[1;38;5;27mMudar para: ", pod[4].nomep);
+				        scanf(" %s\033[0m", pod[4].nomep);
+				        printf(" \033[1;38;5;208mUnidades Atuais: %d\033[0m \n \033[1;38;5;27mMudar para:  ", pod[4].podqan);
+				        scanf(" %d", &pod[4].podqan);
+				        printf(" \033[1;38;5;208mPreco atual: R$%.2f\033[0m \n \033[1;38;5;27mMudar para:  ", pod[4].precop);
+				        scanf(" %f\033[0m", &pod[4].precop);
+				    }
+				    if(editpod == 2){
+				        printf(" \033[1;38;5;208mNome atual: %s\033[0m \n \033[1;38;5;27mMudar para: ", pod[5].nomep);
+				        scanf(" %s\033[0m", pod[5].nomep);
+				        printf(" \033[1;38;5;208mUnidades Atuais: %d\033[0m \n \033[1;38;5;27mMudar para:  ", pod[5].podqan);
+				        scanf(" %d\033[0m", &pod[5].podqan);
+				        printf(" \033[1;38;5;208mPreco atual: R$%.2f\033[0m \n \033[1;38;5;27mMudar para:  ", pod[5].precop);
+				        scanf(" %f\033[0m", &pod[5].precop);
+				    }
+				    if(editpod == 3){
+				        printf(" \033[1;38;5;208mNome atual: %s\033[0m \n \033[1;38;5;27mMudar para: ", pod[6].nomep);
+				        scanf(" %s\033[0m", pod[6].nomep);
+				        printf(" \033[1;38;5;208mUnidades Atuais: %d\033[0m \n \033[1;38;5;27mMudar para:  ", pod[6].podqan);
+				        scanf(" %d\033[0m", &pod[6].podqan);
+				        printf(" \033[1;38;5;208mPreco atual: R$%.2f\033[0m \n \033[1;38;5;27mMudar para:  ", pod[6].precop);
+				        scanf(" %f\033[0m", &pod[6].precop);
+				    }
+				    if(editpod == 4){
+				        printf(" \033[1;38;5;208mNome atual: %s\033[0m \n \033[1;38;5;27mMudar para: ", pod[7].nomep);
+				        scanf(" %s\033[0m", pod[7].nomep);
+				        printf(" \033[1;38;5;208mUnidades Atuais: %d\033[0m \n \033[1;38;5;27mMudar para:  ", pod[7].podqan);
+				        scanf(" %d\033[0m", &pod[7].podqan);
+				        printf(" \033[1;38;5;208mPreco atual: R$%.2f\033[0m \n \033[1;38;5;27mMudar para:  ", pod[7].precop);
+				        scanf(" %f\033[0m", &pod[7].precop);
+				    }
+				    else if(editpod >= 5 && editpod < 5 + totpod) {
+				        fm5 = editpod - 5;
+				        printf(" \033[1;38;5;208mNome atual: %s\033[0m \n \033[1;38;5;27mMudar para: ", pod[fm5].nomep);
+				        scanf(" %s\033[0m", pod[fm5].nomep);
+				        printf(" \033[1;38;5;208mUnidades Atuais: %d\033[0m \n \033[1;38;5;27mMudar para:  ", pod[fm5].podqan);
+				        scanf(" %d\033[0m", &pod[fm5].podqan);
+				        printf(" \033[1;38;5;208mPreco atual: R$%.2f\033[0m \n \033[1;38;5;27mMudar para:  ", pod[fm5].precop);
+				        scanf(" %f\033[0m", &pod[fm5].precop);
+				        continue;
+				    }
+				printf(" \033[1;38;5;201mProduto editado \033[1;38;5;255m;) \033[1;38;5;201mFeliz agora????\033[0m\n");
+				continue;
+				// fim visualizar produto
+			}
+			else if (cde == '3') {
+			    printf(" \033[1;38;5;39mProdutos Cadastrados:\033[0m\n");
+				printf(" \033[1;38;5;77m%s | %d unidades | R$%.2f\033[0m \n", pod[4].nomep, pod[4].podqan, pod[4].precop);
+				printf(" \033[1;38;5;77m%s | %d unidades | R$%.2f\033[0m \n", pod[5].nomep, pod[5].podqan, pod[5].precop);
+				printf(" \033[1;38;5;77m%s | %d unidades | R$%.2f\033[0m \n", pod[6].nomep, pod[6].podqan, pod[6].precop);
+				printf(" \033[1;38;5;77m%s | %d unidades | R$%.2f\033[0m \n", pod[7].nomep, pod[7].podqan, pod[7].precop);
+				if (totpod != 0) {
+				    for(int fodamse = 0; fodamse < totpod; fodamse++){
+						printf(" \033[1;38;5;77m%s | %d unidades | R$%.2f\n\033[0m", pod[fodamse].nomep, pod[fodamse].podqan, pod[fodamse].precop);
+				    }
+				}
+				continue;
+			}
+			else if (cde == '4') {
+				glitter();
+			}
+			else {
+				luna();
+				printf(" \033[1;91mComando invalido :/\033[0m\n");
+				continue;
+			}
+			break;
+		// fim do controle de estoque
+
+		// inicio controle de venda
+		case '2':
+			printf("\033[1;94m======================= Controle de Vendas =======================\033[0m\n");
+			printf(" \033[1;38;5;206m0 - Limpar Buffer\033[0m\n \033[1;38;5;117m1 - Vender\033[0m\n \033[1;38;5;227m2 - Vendas Realizadas\033[0m\n \033[1;38;5;156m3 - Voltar ao Menu Principal\033[0m\n ");
+			scanf(" %c", &cdv);
+			if (cdv == '0') {
+				luna();
+				continue;
+			}
+			if (cdv == '1') {
+			    printf("\n \033[1;38;5;206m0 - Voltar ao controle de vendas\033[0m\n\n");
+				printf(" \033[1;38;5;39mProdutos:\033[0m\n");
+				printf(" \033[1;38;5;219m1 - %s - R$%.2f \033[0m\t\t\t", pod[4].nomep, pod[4].precop);
+				printf(" \033[1;38;5;219m2 - %s - R$%.2f \033[0m\n", pod[5].nomep, pod[5].precop);
+				printf(" \033[1;38;5;219m3 - %s - R$%.2f \033[0m\t\t\t", pod[6].nomep, pod[6].precop);
+				printf(" \033[1;38;5;219m4 - %s - R$%.2f \033[0m\n", pod[7].nomep, pod[7].precop);
+				if (totpod !=0) {
+					for (int elf = 0; elf < totpod; elf++) {
+						printf(" \033[1;38;5;219m%d - %s - R$%.2f \033[0m\t\t\t", algmemata[elf], pod[elf].nomep, pod[elf].precop);
+						if( (elf + 1) %2 == 0) {
+							printf("\n");
+						}
+					}
+				}
+				else {}
+				printf(" \n \033[1;38;5;68mEscolha uma opcao:\033[0m ");
+				scanf(" %d", &escpod);
+				if (escpod == 0) {
+					luna();
+					continue;
+				}
+				else if(escpod == 1) {
+					printf(" \033[1;34m%s - R$%.2f\033[0m\n", pod[4].nomep, pod[4].precop);
+					printf(" \033[1;38;5;92m\033[1;38;5;92mSelecione a quantidade desejada:\033[0m ");
+					scanf(" %f", &escpod2);
+					resultado = 10* escpod2;
+					printf(" \033[1;38;5;92mO valor total ficou:\033[0m \033[1;38;5;40mR$%.2f\033[0m\n", resultado);
+				}
+				else if(escpod == 2) {
+					printf(" \033[1;34m%s - R$%.2f\033[0m\n", pod[5].nomep, pod[5].precop);
+					printf(" \033[1;38;5;92mSelecione a quantidade desejada:\033[0m ");
+					scanf(" %f", &escpod2);
+					resultado = 20* escpod2;
+					printf(" \033[1;38;5;92mO valor total ficou:\033[0m \033[1;38;5;40mR$%.2f\033[0m\n", resultado);
+				}
+				else if(escpod == 3) {
+					printf(" \033[1;34m%s - R$%.2f\033[0m\n", pod[6].nomep, pod[6].precop);
+					printf(" \033[1;38;5;92mSelecione a quantidade desejada:\033[0m ");
+					scanf(" %f", &escpod2);
+					resultado = 15* escpod2;
+					printf(" \033[1;38;5;92mO valor total ficou:\033[0m \033[1;38;5;40mR$%.2f\033[0m\n", resultado);
+				}
+				else if(escpod == 4) {
+					printf(" \033[1;34m%s - R$%.2f\033[0m\n", pod[7].nomep, pod[7].precop);
+					printf(" \033[1;38;5;92mSelecione a quantidade desejada:\033[0m ");
+					scanf(" %f", &escpod2);
+					resultado = 25* escpod2;
+					printf(" \033[1;38;5;92mO valor total ficou:\033[0m \033[1;38;5;40mR$%.2f\033[0m\n", resultado);
+				}
+				else if(escpod >= 5 && escpod < 5 + totpod) {
+					mf = escpod - 5;
+                    mf2 = mf;
+                    printf(" \033[1;34m%s - R$%.2f\033[0m\n", pod[mf].nomep, pod[mf].precop);
+                    printf(" \033[1;38;5;92mSelecione a quantidade desejada:\033[0m ");
+                    scanf(" %f", &escpod2);
+                    resultado = pod[mf].precop * escpod2;
+                    printf(" \033[1;38;5;92mO valor total ficou:\033[0m \033[1;38;5;40mR$%.2f\033[0m\n", resultado);
+				}
+				else {
+					luna();
+					printf("\033[1;91m o.O tu digito \033[1;38;5;208m%d\033[0m\033[1;91m e esperava oq??? comando invalido :/ \033[0m\n", escpod);
+					continue;
+				}
+				// fim venda
+				// inicio forma de pagamento dinheiro
+				printf(" \033[1;38;5;39mSelecione a forma de pagamento:\033[0m\n");
+				printf(" \033[1;38;5;117m1 - dinheiro\n \033[1;38;5;219m2 - cartao\n \033[1;37m3 - Cancelar compra\033[0m\n ");
+				scanf(" %d", &fmdp);
+				if(fmdp == 1) {
+					if(resultado >=100) {
+						printf(" \033[1;38;5;177mDesconto adicionado, valor total ficou de:");
+						resultado2 = resultado* (18.00/100.00);
+						resultado = resultado - resultado2;
+						printf(" \033[1;38;5;40m%.2fR$\033[0m\n", resultado);
+					}
+					else if(resultado >=50) {
+						printf(" \033[1;38;5;177mDesconto adicionado, valor total ficou de:");
+						resultado2 = resultado* (10.00/100.00);
+						resultado = resultado - resultado2;
+						printf(" \033[1;38;5;40m%.2fR$\033[0m\n", resultado);
+					}
+					else if (resultado <50) {
+						printf(" \033[1;38;5;177mDesconto adicionado, valor total ficou de:");
+						resultado2 = resultado* (5.00/100.00);
+						resultado = resultado - resultado2;
+						printf(" \033[1;38;5;40m%.2fR$\033[0m\n", resultado);
+					}
+					while(1) {
+						printf(" \033[1;38;5;39mInforme a quantidade paga em dinheiro:\033[0m ");
+						if(scanf(" %f", &troco) !=1) {
+							printf(" \033[1;91mComando invalido  :/\033[0m\n");
+							while (getchar() != '\n');
+							continue;
+						}
+						if(troco < resultado) {
+							printf(" \033[1;91mQue porra eh essa >(\033[0m\n");
+						}
+						else {
+							troco1 = troco - resultado;
+							printf(" \033[1;38;5;119mTUDO CERTO ;)\n");
+							printf(" \033[1;38;5;166mEntregue: \033[1;38;5;40m%.2fR$ \033[1;38;5;166mde troco para o cliente\033[0m\n \n", troco1);
+							if(escpod == 1) qpod[0] = escpod2;
+                            else if(escpod == 2) qpod[1] = escpod2;
+                            else if(escpod == 3) qpod[2] = escpod2;
+                            else if(escpod == 4) qpod[3] = escpod2;
+                            else if(escpod >= 5) qpod[mf + 4] += escpod2;
+                            if(escpod == 1) poda += resultado;
+                            else if(escpod == 2) podb += resultado;
+                            else if(escpod == 3) podc += resultado;
+                            else if(escpod == 4) podd += resultado;
+                            else if(escpod >= 5) podopium[mf] += resultado;
+                            saldo += resultado;
+                            opium++;
+							glitter();
+						}
+					}
+					// fim forma de pagamento dinheiro
+					// inicio pagamento em cartao
+				}
+				else if(fmdp == 2) {
+					printf(" \033[1;38;5;81mCartao passou?\n");
+					printf(" \033[1;38;5;40m1 - Cartao passou\n \033[1;38;5;160m2 - Cartao nao passou\033[0m\n ");
+					scanf(" %d", &cartaopassou);
+					switch(cartaopassou) {
+					case 1:
+						printf(" \033[1;38;5;113mCompra realizada ;)\033[0m\n");
+						saldo = saldo + resultado;
+						if (escpod == 1) poda += resultado;
+						else if (escpod == 2) podb += resultado;
+						else if (escpod == 3) podc += resultado;
+						else if (escpod == 4) podd += resultado;
+						else if (escpod >=5) podopium[mf] += resultado;
+						if(escpod == 1)qpod[0] = escpod2;
+						if(escpod == 2)qpod[1] = escpod2;
+						if(escpod == 3)qpod[2] = escpod2;
+						if(escpod == 4)qpod[3] = escpod2;
+						if(escpod >= 5)qpod[mf + 4] += escpod2;
+						glitter();
+					
+						break;
+
+					case 2:
+						printf(" \033[1;38;5;196m;( Aff... \033[0m\n");
+						continue;
+
+					default:
+						printf(" \033[1;38;5;103mC0m4nd0 1nv4l1d0 :/\033[0m\n");
+						continue;
+					}
+				}
+				else if(fmdp == 3) {
+					printf(" \033[1;38;5;174mCompra cancelada (0_0)\033[0m\n");
+					continue;
+				}
+				else {
+					luna();
+					printf(" \033[1;91mComando invalido :/\033[0m\n");
+					continue;
+				}
+				// fim pagamento com cartao
+			}
+
+			// historico de vendas
+			else if(cdv == '2') {
+				printf(" \033[1;38;5;39mProdutos vendidos:\033[0m\n");
+				if(qpod[0] > 0) {
+					printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[5].nomep, poda);
+				}
+				if(qpod[1] > 0) {
+					printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[6].nomep, podb);
+				}
+				if(qpod[2] > 0) {
+					printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[7].nomep, podc);
+				}
+				if(qpod[3] > 0) {
+					printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[7].nomep, podd);
+				}
+				for (int j = 0; j < totpod; j++) {
+                    if (qpod[j + 4] > 0) {
+                    printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n",pod[j].nomep, podopium[j]);
+                }
+            }
+				if(qpod[0] == 0 && qpod[1] == 0 && qpod[2] == 0 && qpod[3] == 0 && qpod[mf + 4] == 0) {
+					luna();
+					printf(" \033[1;38;5;197mNenhum produto vendido recentemente <(\033[0m\n");
+					continue;
+				}
+				continue;
+			}
+			else if (cdv == '3') {
+				glitter();
+			}
+			else {
+				luna();
+				printf(" \033[1;91mcomando invalido  :/\033[0m\n");
+				continue;
+			}
+			break;
+		// fim controle de vendas
+
+		// inicio do controle Financeiro
+
+		// menu do controle Financeiro
+		case '3':
+			printf("\033[1;97m======================= Controle Financeiro =======================\033[0m\n");
+			printf(" \033[1;38;5;206m0 - Limpar Buffer\033[0m\n \033[1;38;5;117m1 - Registrar despesas\033[0m\n \033[1;38;5;227m2 - Registrar receita\033[0m\n \033[1;38;5;156m3 - Consultar Saldo\033[0m\n \033[1;38;5;219m4 - Voltar ao menu principal\033[0m\n ");
+			scanf(" %c", &cf);
+			if (cf == '0') {
+				luna();
+				continue;
+			}
+			// registro de despesas (todas as saidas de dinheiro)
+			else if(cf == '1') {
+				printf(" \033[1;38;5;208mDigite suas despesas:\033[0m ");
+				scanf(" %f", &despesas);
+				desp += despesas;
+				continue;
+			}
+			// registro de receitas (todos as entradas de dinheiro)
+			else if(cf == '2') {
+				printf(" \033[1;38;5;208mDigite sua receita:\033[0m ");
+				scanf(" %f", &receita);
+				rec += receita;
+				continue;
+			}
+			// consulta o valor que sobrou entra as receitas e despesas
+			else if(cf == '3') {
+				saldo2 = rec - desp;
+				if(saldo2 + saldo >= 0.0) printf(" \033[1;38;5;39mSeu saldo eh: \033[1;92mR$%.2f\033[0m \033[1;38;5;177m;)\033[0m \n", saldo2 + saldo);
+				else printf(" \033[1;38;5;39mSeu saldo eh: \033[1;31mR$%.2f\033[0m \033[1;38;5;177m;)\033[0m \n", saldo2 + saldo);
+				continue;
+
+			}
+			// volta ao menu principal
+			else if(cf == '4') {
+				glitter();
+			}
+			// aparece caso algum numero seja digitado errado no menu finc.
+			else {
+				luna();
+				printf(" \033[1;91mComando invalido :/\033[0m\n ");
+				continue;
+			}
+		// fim do controle financeiro
+
+		// Encerra o programa
+		case '4':
+			printf("\033[1;38;5;214m-------------- INFORMACOES QUE TALVEZ VC SE IMPORTE --------------\033[0m\n");
+			if(saldo2 + saldo >= 0.0) printf(" \033[1;38;5;39mSaldo Total:\033[0m \033[1;92mR$%.2f\033[0m ;) \n", saldo2 + saldo);
+			else printf(" \033[1;38;5;39mSaldo Total: \033[1;31mR$%.2f\033[0m ;) \n", saldo2 + saldo);
+			printf(" \033[1;38;5;39mItens vendidos: \033[0m\n");
+			if(qpod[0] > 0) printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[4].nomep, poda);
+			if(qpod[1] > 0) printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[5].nomep, podb);
+			if(qpod[2] > 0) printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[6].nomep, podc);
+			if(qpod[3] > 0) printf(" \033[1;38;5;40m%s %.2fR$\033[0m\n", pod[7].nomep, podd);
+		    for (int j = 0; j < totpod; j++) {
+                if (qpod[j + 4] > 0) printf(" \033[1;38;5;40m%s - R$%.2f\033[0m\n", pod[j].nomep, podopium[j]);
+            }
+            printf(" \033[1;38;5;160mPrograma encerrado p-p\033[0m");
+			exit (0);
+		// aparece caso algum numero seja digitado errado no menu princ.
+		default:
+			luna();
+			printf("\033[1;91m Comando invalido :/\033[0m\n ");
+			glitter();
+		}
+		break;
+	}
+}
+int main() {
+	tnhokinnocharizard();
+	printf("\033[1;38;5;117m");
+    printf(" _______  _______  _______  _______  ___      _______  ______    ___   _______ \n");
+    printf("|       ||   _   ||       ||       ||   |    |   _   ||    _ |  |   | |   _   |\n");
+    printf("|    _  ||  |_|  ||    _  ||    ___||   |    |  |_|  ||   | ||  |   | |  |_|  |\n");
+    printf("\033[1;38;5;219m");
+    printf("|   |_| ||       ||   |_| ||   |___ |   |    |       ||   |_||_ |   | |       |\n");
+    printf("|    ___||       ||    ___||    ___||   |___ |       ||    __  ||   | |       |\n");
+    printf("|   |    |   _   ||   |    |   |___ |       ||   _   ||   |  | ||   | |   _   |\n");
+    printf("\033[1;37m");
+    printf("|___|    |__| |__||___|    |_______||_______||__| |__||___|  |_||___| |__| |__|\n");
+    printf("\033[0m");
+	glitter();
+}
+// fim do programa
