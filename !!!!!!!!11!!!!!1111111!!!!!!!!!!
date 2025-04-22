@@ -440,7 +440,25 @@ void glitter() {
 		    for (int j = 0; j < totpod; j++) {
                 if (qpod[j + 4] > 0) printf(" \033[1;38;5;40m%s - R$%.2f\033[0m\n", pod[j].nomep, podopium[j]);
             }
-            printf(" \033[1;38;5;160mPrograma encerrado p-p\033[0m");
+            printf(" \033[1;38;5;160mPrograma encerrado p-p\033[0m\n");
+            printf("  ____      _____      _____ \n");
+            printf(" /    |    |     |    |     |\n");
+            printf("|  o  |    |   __|    |   __|\n");
+            printf("|     |    |  |_      |  |_  \n");
+            printf("|  _  |    |   _]     |   _] \n");
+            printf("|  |  |    |  |       |  |   \n");
+            printf("|__|__|    |__|       |__|   \n");
+            printf("                             \n");
+             printf(" .-\"\"\"\"\"\"-.\n");
+             printf("   .'          '. \n");
+    printf("  /   O      O   \\ \n");
+    printf(" :           `    : \n");
+    printf(" |                | \n");
+    printf(" :    .------.    : \n");
+    printf("  \\  '        '  / \n");
+    printf("   '.          .' \n");
+    printf("     '-......-' \n");
+    
 			exit (0);
 		// aparece caso algum numero seja digitado errado no menu princ.
 		default:
